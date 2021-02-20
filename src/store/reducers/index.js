@@ -1,9 +1,9 @@
 import {ADD_USER, GET_USER} from "../constants"
 
 const initialState = {
-  email: "admin@domain.com",
-  password: "qwerty ",
-  userName: "qwerty",
+  email: "",
+  password: "",
+  userName: "",
 }
 
 const user_reducer = (state = initialState, action) => {

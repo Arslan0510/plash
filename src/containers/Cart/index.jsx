@@ -3,17 +3,18 @@ import React, {Component} from "react"
 class Cart extends Component {
   render() {
     return (
-      <section class="pt-5 pb-5">
-        <div class="container">
-          <div class="row w-100">
-            <div class="col-lg-12 col-md-12 col-12">
-              <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
-              <p class="mb-5 text-center">
-                <i class="text-info font-weight-bold">3</i> items in your cart
+      <section className="pt-5 pb-5">
+        <div className="container">
+          <div className="row w-100">
+            <div className="col-lg-12 col-md-12 col-12">
+              <h3 className="display-5 mb-2 text-center">Shopping Cart</h3>
+              <p className="mb-5 text-center">
+                <i className="text-info font-weight-bold">3</i> items in your
+                cart
               </p>
               <table
                 id="shoppingCart"
-                class="table table-condensed table-responsive"
+                className="table table-condensed table-responsive"
               >
                 <thead>
                   <tr>
@@ -26,17 +27,17 @@ class Cart extends Component {
                 <tbody>
                   <tr>
                     <td data-th="Product">
-                      <div class="row">
-                        <div class="col-md-3 text-left">
+                      <div className="row">
+                        <div className="col-md-3 text-left">
                           <img
                             src="https://via.placeholder.com/250x250/5fa9f8/ffffff"
                             alt=""
-                            class="img-fluid d-none d-md-block rounded mb-2 shadow "
+                            className="img-fluid d-none d-md-block rounded mb-2 shadow "
                           />
                         </div>
-                        <div class="col-md-9 text-left mt-sm-2">
+                        <div className="col-md-9 text-left mt-sm-2">
                           <h4>Product Name</h4>
-                          <p class="font-weight-light">Brand &amp; Name</p>
+                          <p className="font-weight-light">Brand &amp; Name</p>
                         </div>
                       </div>
                     </td>
@@ -44,34 +45,34 @@ class Cart extends Component {
                     <td data-th="Quantity">
                       <input
                         type="number"
-                        class="form-control form-control-lg text-center"
+                        className="form-control form-control-lg text-center"
                         value="1"
                       />
                     </td>
-                    <td class="actions" data-th="">
-                      <div class="text-right">
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fa fa-sync"></i>
+                    <td className="actions" data-th="">
+                      <div className="text-right">
+                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
+                          <i className="fa fa-sync"></i>
                         </button>
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fa fa-trash"></i>
+                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
+                          <i className="fa fa-trash"></i>
                         </button>
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <td data-th="Product">
-                      <div class="row">
-                        <div class="col-md-3 text-left">
+                      <div className="row">
+                        <div className="col-md-3 text-left">
                           <img
                             src="https://via.placeholder.com/250x250/5fa9f8/ffffff"
                             alt=""
-                            class="img-fluid d-none d-md-block rounded mb-2 shadow "
+                            className="img-fluid d-none d-md-block rounded mb-2 shadow "
                           />
                         </div>
-                        <div class="col-md-9 text-left mt-sm-2">
+                        <div className="col-md-9 text-left mt-sm-2">
                           <h4>Product Name</h4>
-                          <p class="font-weight-light">Brand &amp; Name</p>
+                          <p className="font-weight-light">Brand &amp; Name</p>
                         </div>
                       </div>
                     </td>
@@ -79,34 +80,34 @@ class Cart extends Component {
                     <td data-th="Quantity">
                       <input
                         type="number"
-                        class="form-control form-control-lg text-center"
+                        className="form-control form-control-lg text-center"
                         value="1"
                       />
                     </td>
-                    <td class="actions" data-th="">
-                      <div class="text-right">
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fas fa-sync"></i>
+                    <td className="actions" data-th="">
+                      <div className="text-right">
+                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
+                          <i className="fas fa-sync"></i>
                         </button>
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fa fa-trash"></i>
+                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
+                          <i className="fa fa-trash"></i>
                         </button>
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <td data-th="Product">
-                      <div class="row">
-                        <div class="col-md-3 text-left">
+                      <div className="row">
+                        <div className="col-md-3 text-left">
                           <img
                             src="https://via.placeholder.com/250x250/5fa9f8/ffffff"
                             alt=""
-                            class="img-fluid d-none d-md-block rounded mb-2 shadow "
+                            className="img-fluid d-none d-md-block rounded mb-2 shadow "
                           />
                         </div>
-                        <div class="col-md-9 text-left mt-sm-2">
+                        <div className="col-md-9 text-left mt-sm-2">
                           <h4>Product Name</h4>
-                          <p class="font-weight-light">Brand &amp; Name</p>
+                          <p className="font-weight-light">Brand &amp; Name</p>
                         </div>
                       </div>
                     </td>
@@ -114,41 +115,41 @@ class Cart extends Component {
                     <td data-th="Quantity">
                       <input
                         type="number"
-                        class="form-control form-control-lg text-center"
+                        className="form-control form-control-lg text-center"
                         value="1"
                       />
                     </td>
-                    <td class="actions" data-th="">
-                      <div class="text-right">
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fa fa-sync"></i>
+                    <td className="actions" data-th="">
+                      <div className="text-right">
+                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
+                          <i className="fa fa-sync"></i>
                         </button>
-                        <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i class="fa fa-trash"></i>
+                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
+                          <i className="fa fa-trash"></i>
                         </button>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <div class="float-right text-right">
+              <div className="float-right text-right">
                 <h4>Subtotal:</h4>
                 <h1>$99.00</h1>
               </div>
             </div>
           </div>
-          <div class="row mt-4 d-flex align-items-center">
-            <div class="col-sm-6 order-md-2 text-right">
+          <div className="row mt-4 d-flex align-items-center">
+            <div className="col-sm-6 order-md-2 text-right">
               <a
                 href="catalog.html"
-                class="btn btn-primary mb-4 btn-lg pl-5 pr-5"
+                className="btn btn-primary mb-4 btn-lg pl-5 pr-5"
               >
                 Checkout
               </a>
             </div>
-            <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
+            <div className="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
               <a href="catalog.html">
-                <i class="fa fa-arrow-left mr-2"></i> Continue Shopping
+                <i className="fa fa-arrow-left mr-2"></i> Continue Shopping
               </a>
             </div>
           </div>

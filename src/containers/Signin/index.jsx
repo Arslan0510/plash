@@ -1,47 +1,57 @@
 import React, {Component} from "react"
 import logo from "../../assets/bootstrap-logo.svg"
+import {connect} from "react-redux"
 
 class Sigin extends Component {
+  componentDidMount() {
+    console.log("[STATE AS A PROPS", this.props.getUser)
+  }
   render() {
     return (
-      <main class="form-signin">
+      <main className="form-signin">
         <form>
-          <img class="mb-4" src={logo} alt="" width="72" height="57" />
-          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-          <label for="inputEmail" class="visually-hidden">
+          <img className="mb-4" src={logo} alt="" width="72" height="57" />
+          <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+          <label htmlFor="inputEmail" className="visually-hidden">
             Email address
           </label>
           <input
             type="email"
             id="inputEmail"
-            class="form-control"
+            className="form-control"
             placeholder="Email address"
             required
-            autofocus
+            autoFocus
           />
-          <label for="inputPassword" class="visually-hidden">
+          <label htmlFor="inputPassword" className="visually-hidden">
             Password
           </label>
           <input
             type="password"
             id="inputPassword"
-            class="form-control"
+            className="form-control"
             placeholder="Password"
             required
           />
-          <div class="checkbox mb-3">
+          <div className="checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me" /> Remember me
             </label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">
+          <button className="w-100 btn btn-lg btn-primary" type="submit">
             Sign in
           </button>
-          <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+          <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
         </form>
       </main>
     )
   }
 }
 
-export default Sigin
+const mapStateToProps = (state) => {
+  return {
+    getUser: state,
+  }
+}
+
+export default connect(mapStateToProps)(Sigin)
