@@ -1,4 +1,5 @@
 import React from "react"
+import image from "../../../assets/image.jpeg"
 
 const index = () => {
   return (
@@ -23,11 +24,23 @@ const index = () => {
           <div class="my-3 py-3">
             <h2 class="display-5">Another headline</h2>
             <p class="lead">And an even wittier subheading.</p>
+            <button class="btn btn-primary btn-sm">Add to Cart</button>
           </div>
           <div
             class="bg-light shadow-sm mx-auto"
             style={{width: "80%", height: 300, borderRadius: "21px 21px 0 0"}}
-          ></div>
+          >
+            <img
+              src={image}
+              alt=""
+              style={{
+                width: "100%",
+                height: 300,
+                borderRadius: "21px 21px 0 0",
+                objectFit: "cover",
+              }}
+            />
+          </div>
         </div>
         <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
           <div class="my-3 p-3">
