@@ -1,26 +1,10 @@
-import {ADD_USER, GET_USER} from "../constants"
+import {combineReducers} from "redux"
+import auth_reducer from "./auth_reducer"
+import cart_reducer from "./cart_reducer"
 
-const initialState = {
-  email: "",
-  password: "",
-  userName: "",
-}
+const rootReducer = combineReducers({
+  auth: auth_reducer,
+  cart: cart_reducer,
+})
 
-const user_reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_USER:
-      return {
-        ...state,
-        email: action.payload.email,
-        password: action.payload.password,
-        userName: action.payload.userName,
-      }
-    case GET_USER:
-      return state
-
-    default:
-      return state
-  }
-}
-
-export default user_reducer
+export default rootReducer

@@ -14,6 +14,7 @@ class Signup extends Component {
     const {email, password, userName} = this.state
     this.props.addUser(email, password, userName)
   }
+
   render() {
     return (
       <main className="form-signin">

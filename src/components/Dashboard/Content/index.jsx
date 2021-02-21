@@ -1,7 +1,22 @@
-import React from "react"
+import React, {useState} from "react"
 import image from "../../../assets/image.jpeg"
+import {useDispatch} from "react-redux"
+import {ADD_TO_CART} from "../../../store/constants"
 
-const index = () => {
+const Content = () => {
+  const [state, setstate] = useState({
+    heading: "Another headline",
+    details: "And an even wittier subheading.",
+    price: 12.33,
+    img: image,
+  })
+  const dispatch = useDispatch()
+
+  const handleAddToCart = (e) => {
+    e.preventDefault()
+    dispatch({type: ADD_TO_CART, payload: state})
+  }
+
   return (
     <main>
       <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
@@ -22,9 +37,14 @@ const index = () => {
       <div className="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
         <div className="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
           <div className="my-3 py-3">
-            <h2 className="display-5">Another headline</h2>
-            <p className="lead">And an even wittier subheading.</p>
-            <button className="btn btn-primary btn-sm">Add to Cart</button>
+            <h2 className="display-5">{state.heading}</h2>
+            <p className="lead">{state.details}</p>
+            <button
+              className="btn btn-primary btn-sm"
+              onClick={handleAddToCart}
+            >
+              Add to Cart
+            </button>
           </div>
           <div
             className="bg-light shadow-sm mx-auto"
@@ -126,4 +146,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Content

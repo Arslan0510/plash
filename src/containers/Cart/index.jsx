@@ -1,7 +1,10 @@
 import React, {Component} from "react"
+import {connect} from "react-redux"
 
 class Cart extends Component {
   render() {
+    const {state} = this.props
+    console.log("cart", state.cart.heading)
     return (
       <section className="pt-5 pb-5">
         <div className="container">
@@ -30,18 +33,32 @@ class Cart extends Component {
                       <div className="row">
                         <div className="col-md-3 text-left">
                           <img
-                            src="https://via.placeholder.com/250x250/5fa9f8/ffffff"
+                            src={
+                              state.cart.img
+                                ? state.cart.img
+                                : "https://via.placeholder.com/250x250/5fa9f8/ffffff"
+                            }
                             alt=""
                             className="img-fluid d-none d-md-block rounded mb-2 shadow "
                           />
                         </div>
                         <div className="col-md-9 text-left mt-sm-2">
-                          <h4>Product Name</h4>
-                          <p className="font-weight-light">Brand &amp; Name</p>
+                          <h4>
+                            {state.cart.heading
+                              ? state.cart.heading
+                              : "Product Name"}
+                          </h4>
+                          <p className="font-weight-light">
+                            {state.cart.details
+                              ? state.cart.details
+                              : "Brand &amp; Name"}
+                          </p>
                         </div>
                       </div>
                     </td>
-                    <td data-th="Price">$49.00</td>
+                    <td data-th="Price">
+                      ${state.cart.price ? state.cart.price : "49.00"}
+                    </td>
                     <td data-th="Quantity">
                       <input
                         type="number"
@@ -51,10 +68,10 @@ class Cart extends Component {
                     </td>
                     <td className="actions" data-th="">
                       <div className="text-right">
-                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i className="fa fa-sync"></i>
+                        <button className="btn btn-white border-secondary bg-white btn-md m-1">
+                          <i className="fa fa-refresh"></i>
                         </button>
-                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
+                        <button className="btn btn-white border-secondary bg-white btn-md m-1">
                           <i className="fa fa-trash"></i>
                         </button>
                       </div>
@@ -86,45 +103,10 @@ class Cart extends Component {
                     </td>
                     <td className="actions" data-th="">
                       <div className="text-right">
-                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i className="fas fa-sync"></i>
+                        <button className="btn btn-white border-secondary bg-white btn-md mb-1">
+                          <i className="fa fa-refresh"></i>
                         </button>
-                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i className="fa fa-trash"></i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-th="Product">
-                      <div className="row">
-                        <div className="col-md-3 text-left">
-                          <img
-                            src="https://via.placeholder.com/250x250/5fa9f8/ffffff"
-                            alt=""
-                            className="img-fluid d-none d-md-block rounded mb-2 shadow "
-                          />
-                        </div>
-                        <div className="col-md-9 text-left mt-sm-2">
-                          <h4>Product Name</h4>
-                          <p className="font-weight-light">Brand &amp; Name</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td data-th="Price">$49.00</td>
-                    <td data-th="Quantity">
-                      <input
-                        type="number"
-                        className="form-control form-control-lg text-center"
-                        value="1"
-                      />
-                    </td>
-                    <td className="actions" data-th="">
-                      <div className="text-right">
-                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
-                          <i className="fa fa-sync"></i>
-                        </button>
-                        <button className="btn btn-white border-secondary bg-white btn-md mb-2">
+                        <button className="btn btn-white border-secondary bg-white btn-md mb-1">
                           <i className="fa fa-trash"></i>
                         </button>
                       </div>
@@ -134,7 +116,7 @@ class Cart extends Component {
               </table>
               <div className="float-right text-right">
                 <h4>Subtotal:</h4>
-                <h1>$99.00</h1>
+                <h1>${49.0 + state.cart.price}</h1>
               </div>
             </div>
           </div>
@@ -148,7 +130,7 @@ class Cart extends Component {
               </a>
             </div>
             <div className="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
-              <a href="catalog.html">
+              <a href="/">
                 <i className="fa fa-arrow-left mr-2"></i> Continue Shopping
               </a>
             </div>
@@ -159,4 +141,10 @@ class Cart extends Component {
   }
 }
 
-export default Cart
+const mapStateToProps = (state) => {
+  return {
+    state: state,
+  }
+}
+
+export default connect(mapStateToProps)(Cart)
